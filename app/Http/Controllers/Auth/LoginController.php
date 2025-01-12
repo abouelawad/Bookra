@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -40,8 +40,7 @@ class LoginController extends Controller
         $this->middleware('auth')->only('logout');
     }
 
-
-     /**
+        /**
      * Attempt to log the user into the application.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -49,9 +48,10 @@ class LoginController extends Controller
      */
     protected function attemptLogin(Request $request)
     {
-
         return Auth::guard('admin')->attempt(
             $this->credentials($request)
         );
     }
+
+
 }
