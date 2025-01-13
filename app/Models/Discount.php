@@ -9,4 +9,6 @@ class Discount extends Model
 {
     /** @use HasFactory<\Database\Factories\DiscountFactory> */
     use HasFactory;
+
+    protected $fillable=['code','percentage','expiry_date','quantity'];
 }
