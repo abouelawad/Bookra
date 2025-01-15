@@ -322,7 +322,7 @@ return [
         ],
         [
             'text' => 'discounts',
-            'url' => 'dashboard/discount/index',
+            'url' => 'dashboard/discount/',
             'icon' => 'fas fa-tag',
             // 'label' => 4,
             // 'label_color' => 'success',

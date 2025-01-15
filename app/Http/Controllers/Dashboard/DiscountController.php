@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DiscountRequest;
 use App\Models\Discount;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,17 @@ class DiscountController extends Controller
         return view('dashboard.discount.show',compact('discount'));
     }
 
+    public function create()
+    {
+        return view('dashboard.discount.create');
+    }
+
+    public function store(DiscountRequest $request)
+    {
+        Discount::create($request->except('_token'));
+
+        return redirect(route('dashboard.discount.index'));
+    }
     public function edit(Discount $discount)
     {
         return view('dashboard.discount.edit',compact('discount'));
