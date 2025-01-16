@@ -53,5 +53,26 @@ class LoginController extends Controller
         );
     }
 
+    /**
+     * Summary of adminLogout
+        NOTE - this method has been copied from AuthenticatesUsers {logout}
+     */
+    public function adminLogout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/login');
+    }
+
 
 }

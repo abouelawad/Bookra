@@ -3,11 +3,12 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
+
 <div class="d-flex justify-content-sm-between">
 	<h1>Discounts</h1>
 
 		<a href="{{ route('dashboard.discount.create') }}" 
-                    class="btn btn-success btn-sm "><i
+        class="btn btn-success btn-sm px-1"><i
 				class="fas fa-plus-circle fa-xs px-1" style="color: #fff;"></i> create</a>
 	</div>
 @stop

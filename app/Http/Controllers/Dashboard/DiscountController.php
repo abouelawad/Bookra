@@ -11,7 +11,7 @@ class DiscountController extends Controller
 {
     public function index()
     {
-        $discounts = Discount::paginate( 20,);
+        $discounts = Discount::orderByDesc('id')->paginate( 20,);
         return view('dashboard.discount.index',
                     compact('discounts'));
     }
